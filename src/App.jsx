@@ -23,8 +23,8 @@ const App = () => {
           path="/"
           element={
             <div>
-              <div className="flex flex-col justify-center items-center m-10">
-                <h1 className="title text-7xl font-bold">Movie Watchlist App</h1>
+              <div className="max-[374px]:text-center flex flex-col justify-center items-center m-10">
+                <h1 className="min-[320px]:text-4xl min-[785px]:text-7xl title font-bold">Movie Watchlist App</h1>
                 <input
                   type="text"
                   name="searchParam"
@@ -36,7 +36,7 @@ const App = () => {
                 {loading ? <p className="text-white">Loading...</p> : null}
               </div>
 
-              <div className="grid grid-cols-4 gap-2 m-10 text-white">
+              <div className="grid min-[768px]:grid-cols-4 gap-2 m-10 text-white">
                 {searchResults && searchResults.length > 0 && !loading ? (
                   searchResults.map((movieItem) => (
                     <MovieCard key={movieItem.id} movieItem={movieItem} />
