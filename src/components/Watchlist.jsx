@@ -44,16 +44,6 @@ const Watchlist = () => {
               </button>
             </div>
           ))}
-
-          {/* <button
-                  disabled={state.watched.findIndex((item) =>
-                    item.id === movieItem.id > -1 ? true : false
-                  )}
-                  onClick={() => handleAddtoWatched(movieItem)}
-                  className="gradient-colors text-lg m-2 p-2 rounded-md"
-                >
-                  Add to Watched
-                </button> */}
         </div>
       ) : (
         <h1 className="text-white text-lg font-bold">No movie added yet!</h1>

@@ -23,6 +23,10 @@ function GlobalState({ children }) {
   const [loading, setLoading] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
   const [state, dispatch] = useReducer(Reducer, initialState);
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem('user');
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
 
   async function fetchList() {
     try {
@@ -42,7 +46,6 @@ function GlobalState({ children }) {
     }
   }
   
-
   useEffect(() => {
     if (searchParam !== "") fetchList();
   }, [searchParam]);
@@ -80,7 +83,6 @@ function GlobalState({ children }) {
 
   function handleRemoveFromWatched(movie) {
     if (movie && movie.id) {
-      // console.log("Removing movie:", movie);
       dispatch({
         type: REMOVE_FROM_WATCHED,
         payload: movie,
@@ -107,6 +109,8 @@ function GlobalState({ children }) {
         handleRemoveFromWatched,
         handleRemoveFromWatchlist,
         handleMoveToWatched,
+        user,
+        setUser,
         state,
       }}
     >
