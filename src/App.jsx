@@ -42,7 +42,7 @@ const App = () => {
                     <MovieCard key={movieItem.id} movieItem={movieItem} />
                   ))
                 ) : (
-                  <h1 className="text-white text-lg font-bold">
+                  <h1 className="flex absolute right-[672px] text-white text-lg font-bold">
                     No movies were found!
                   </h1>
                 )}

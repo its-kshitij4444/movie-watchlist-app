@@ -13,11 +13,11 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-gray-800 text-white py-4 px-6">
+    <header className="text-white border-b-2 rounded-b-lg w-full py-4 px-6 backdrop-blur-md">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <Link to="/" className="text-xl font-bold">Movie Watchlist</Link>
-          {user && <span>Hello, {user.name}!</span>}
+          {user && <span className='text-2xl text-blue-700 font-bold'>Hello, {user.name}!</span>}
         </div>
         {user && (
           <div className="flex items-center space-x-4">
