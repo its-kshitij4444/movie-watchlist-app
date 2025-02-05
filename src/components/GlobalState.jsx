@@ -28,7 +28,7 @@ function GlobalState({ children }) {
     try {
       setLoading(true);
       const apiResponse = await fetch(
-        `http://localhost:5000/api/search?query=${searchParam}`
+        `https://movie-watchlist-app-7bl3.onrender.com/api/search?query=${searchParam}`
       );
       const result = await apiResponse.json();
   
