@@ -43,9 +43,9 @@ const Reducer = (state, action) => {
       return {
         ...state,
         watchList: state.watchList.filter(
-          (movie) => movie.id !== action.payload.id
+          (movie) => movie?.id !== action?.payload.id
         ),
-        watched: [action.payload, ...state.watched],
+        watched: [action?.payload, ...state.watched],
       };
 
     default:

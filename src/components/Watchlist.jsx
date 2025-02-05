@@ -37,7 +37,7 @@ const Watchlist = () => {
               </button>
               <button
                 onClick={() => handleMoveToWatched(movieItem)}
-                disabled={state.watched.some((item) => item.id === movie.id)}
+                disabled={state.watched.some((item) => item.id === movieItem.id)}
                 className="mt-4 text-white px-4 py-2 rounded-md"
               >
                 Move to Watched
